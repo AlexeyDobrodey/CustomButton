@@ -115,11 +115,7 @@ class CustomButton : View {
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
-
         rectF.set(0f, 0f, w.toFloat(), h.toFloat())
-        if (mWidthText > width) {
-            runBinarySearchOptimalTextSize(width)
-        }
     }
 
     override fun onDraw(canvas: Canvas) {
