@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">CustomViewButton</string>
+
+    <string name="custom_button_text">Custom Button</string>
+    <string name="hint_min_text_size">Мин. размер шрифта(sp)</string>
+    <string name="hint_text_size">Размер шрифта(sp)</string>
+    <string name="hint_text">Текст кнопки</string>
+    <string name="text_btn_update">Обновить</string>
+
+
+</resources>
