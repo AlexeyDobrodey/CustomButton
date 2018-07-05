@@ -13,7 +13,7 @@ import android.view.View
 import com.example.alexey.customviewbutton.R
 
 
-class CustomButton : View {
+class CustomButton : CustomView {
 
     private var mCornerRadius = .0f
 
@@ -30,21 +30,13 @@ class CustomButton : View {
     private var rectF = RectF()
 
     constructor(context: Context) : super(context)
-
-    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs) {
-        initAttributes(attrs)
-    }
-
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
-        initAttributes(attrs)
-    }
+    constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int) : super(context, attrs, defStyleAttr)
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes) {
-        initAttributes(attrs)
-    }
+    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes)
 
-    private fun initAttributes(attrs: AttributeSet?) {
+    override fun initAttributes(attrs: AttributeSet?) {
         mPaint = Paint(Paint.ANTI_ALIAS_FLAG)
         mTextPaint = TextPaint(Paint.ANTI_ALIAS_FLAG)
 
@@ -91,18 +83,6 @@ class CustomButton : View {
         val height = reconSize(desiredHeight.toInt(), heightMeasureSpec)
 
         setMeasuredDimension(width, height)
-    }
-
-    @SuppressLint("SwitchIntDef")
-    private fun reconSize(contentSize: Int, measureSpec: Int): Int {
-        val mode = MeasureSpec.getMode(measureSpec)
-        val size = MeasureSpec.getSize(measureSpec)
-
-        return when (mode) {
-            MeasureSpec.EXACTLY -> size
-            MeasureSpec.AT_MOST -> Math.min(contentSize, size)
-            else -> contentSize
-        }
     }
 
     override fun onLayout(changed: Boolean, left: Int, top: Int, right: Int, bottom: Int) {

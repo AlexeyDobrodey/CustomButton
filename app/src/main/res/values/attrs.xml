@@ -8,4 +8,13 @@
         <attr name="cbMinTextSize" format="reference|dimension" />
         <attr name="cbTextColor" format="reference|color" />
     </declare-styleable>
+
+    <declare-styleable name="CustomImageView">
+        <attr name="civCropShape" format="enum">
+            <enum name="circle" value="0"/>
+            <enum name="star" value="1"/>
+            <enum name="eight" value="2"/>
+        </attr>
+        <attr name="civSrc" format="reference|integer"/>
+    </declare-styleable>
 </resources>
